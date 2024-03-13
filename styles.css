@@ -1,0 +1,94 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+.background{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55%;
+    margin: 10vh auto;
+    min-height: 80vh;
+    border-radius: 2rem;
+    background-color: #558298;
+}
+
+.container{
+    position: relative;
+    display: flex;
+    width: 70vh;
+    height: 70vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background: #82A7B9;
+    border-radius: 1rem;
+    border: solid 3px #1E5068;
+    
+}
+h2{
+    font-size: 4em;
+    color: #f1f1f1;
+}
+
+.reset{
+    padding: 0.5em 1em;
+    cursor: pointer;
+    color: #1E5068;
+    background-color: #f1f1f1;
+    border: none;
+    text-transform: uppercase;
+    border-radius: 0.5em;
+    box-shadow: 3px 5px 8px 0px #112b36;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+.reset:focus{
+    color:#f1f1f1;
+    background: #112b36;
+}
+.game{
+    width: 60vh;
+    height: 42vh;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap:3vh;
+    transform-style: preserve-3d;
+    perspective: 800px;
+}
+.item{
+    position: relative;
+    width: 8vh;
+    height: 8vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    background-color: #f1f1f1;
+    border-radius: 0.2em;
+    transform: rotateY(180deg);
+    transition: 0.4s;
+}
+.item.boxOpen{
+    transform: rotateY(0deg);
+}
+.item::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #F0D181;
+    border-radius: 0.2em;
+    border: solid 2px #f1f1f1;
+    transition: 0.4s;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+}
+.boxOpen:after, .boxMatch:after{
+    transform: rotateY(180deg);
+}
