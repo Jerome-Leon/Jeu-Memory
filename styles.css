@@ -3,54 +3,81 @@
     margin:0;
     box-sizing: border-box;
     font-family: monospace;
+    overflow-y: hidden;
 }
-
 .background{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 55%;
-    margin: 10vh auto;
-    min-height: 80vh;
+    margin: 5vh auto;
+    min-height: 90vh;
     border-radius: 2rem;
-    background-color: #558298;
+    background-color: #9f8bc2;
 }
-
 .container{
     position: relative;
     display: flex;
     width: 70vh;
-    height: 70vh;
+    height: 80vh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 30px;
     background: #82A7B9;
-    border-radius: 1rem;
+    border-radius: 0.4em 6em;
     border: solid 3px #1E5068;
-    
+    box-shadow: 1px 3px 20px 1px #112b3670;
 }
 h2{
-    font-size: 4em;
+    font-size: 3em;
     color: #f1f1f1;
+    background-color: #1E5068;
+    padding: 0.2em 1em;
+    border-radius: 0.4em;
 }
-
+span.kawai{
+    letter-spacing: -0,8em;
+    color: #82A7B9;
+}
 .reset{
     padding: 0.5em 1em;
     cursor: pointer;
-    color: #1E5068;
-    background-color: #f1f1f1;
-    border: none;
+    color: #f1f1f1;
+    background-color: #35677f;
+    border: solid 3px #f1f1f1;
     text-transform: uppercase;
     border-radius: 0.5em;
-    box-shadow: 3px 5px 8px 0px #112b36;
+    box-shadow: 3px 5px 15px 0px #112b3671;
     font-size: 1.5em;
     letter-spacing: 0.1em;
     text-transform: uppercase;
+    transition: ease-in-out 0.5s;
+}
+.reset:hover{
+    background-color: #1E5068;
+    transition: ease-in-out 0.5s;
 }
 .reset:focus{
     color:#f1f1f1;
     background: #112b36;
+}
+.message{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 47vh;
+    height: 4em;
+    background-color: #f1f1f1;
+    border-radius: 0.5em;
+    color: #1E5068;
+    justify-content: center;
+    border: solid 2px #1E5068 inset;
+}
+.victory{
+    text-align: center;
+    font-size: 1.8em;
+    padding: 0.3em 0 1.9em 0;
 }
 .game{
     width: 60vh;
@@ -60,7 +87,7 @@ h2{
     flex-wrap: wrap;
     gap:3vh;
     transform-style: preserve-3d;
-    perspective: 800px;
+    perspective: 1000px;
 }
 .item{
     position: relative;
@@ -74,6 +101,8 @@ h2{
     border-radius: 0.2em;
     transform: rotateY(180deg);
     transition: 0.4s;
+    cursor: pointer;
+    border: 2px dotted #b8d0db;
 }
 .item.boxOpen{
     transform: rotateY(0deg);
@@ -84,11 +113,14 @@ h2{
     inset: 0;
     background: #F0D181;
     border-radius: 0.2em;
-    border: solid 2px #f1f1f1;
+    border: solid 3px #c8a64d;
     transition: 0.4s;
     transform: rotateY(0deg);
     backface-visibility: hidden;
 }
-.boxOpen:after, .boxMatch:after{
+.boxOpen::after {
+    transform: rotateY(180deg);
+}
+.boxMatch::after{
     transform: rotateY(180deg);
 }
