@@ -79,6 +79,38 @@ span.kawai{
     font-size: 1.8em;
     padding: 0.3em 0 1.9em 0;
 }
+@keyframes scaleAnimation {
+    0% {
+        transform: scale(1);
+    }
+    12.5%{
+        transform: scale(.9);
+    }
+    25%{
+        transform: scale(1);
+    }
+    37.5%{
+        transform: scale(.9);
+    }
+    50% {
+        transform: scale(1);
+    }
+    62.5%{
+        transform: scale(.9);
+    }
+    75%{
+        transform: scale(1);
+    }
+    87.5%{
+        transform: scale(.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.victory.scale {
+    animation: scaleAnimation 4s ease-in-out;
+}
 .game{
     width: 60vh;
     height: 42vh;
