@@ -1,2 +1,2 @@
-# Jeu-Memory
- Création d'un jeu style memory avec javascript
+# Memory game
+ Creating a memory game with javascript
